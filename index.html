@@ -60,9 +60,9 @@ body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(6
 </div>
 
 <script>
-const words=["لؤلؤ","مفاجأة","اطمئنان","سيئ","متسائل","استئناف","مسؤولية","تفاؤل","مبتدئون","استثناء"];
+const words=["امتراء","تهيؤ","استرضاء","استئثار","هنيئًا","تواطؤ","كسرى","مستنشئ","يتبوأ","خطيئة"];
 // نطق مخصص بدون تنوين أو حركة إعرابية في نهاية الكلمة
-const spokenWords=["لؤلؤْ","مفاجأة","اطمئنان","سيئ","مُتَسَائِلْ","اِسْتِئْنَافْ","مَسْؤُولِيَّةْ","تَفَاؤُلْ","مُبْتَدِئُونْ","اِسْتِثْنَاءْ"];
+const spokenWords=["اِمْتِرَاء","تَهَيُّؤٌ","اِسْتِرْضاء","اِسْتِئْثَارٌ","هنيئًا","تَوَاطُؤ","كِسرَى","مُسْتَنْشِئ","يَتَبَوَّأ","خَطِيئَة"];
 let i=0,score=0,plays=0,results=[];
 
 const $=id=>document.getElementById(id);
@@ -140,7 +140,7 @@ $("submit").onclick=()=>{
 $("answer").addEventListener("keydown",e=>{if(e.key==="Enter")$("submit").click()});
 function finish(){
   show("result");$("finalScore").textContent=`${score} / 10`;
-  let msg=score<=2?"😑😑 لا تعليق":score<=5?"ياسر طاهر فخور فيك":score<=8?"تحدي الإملاء يتصل 📞":"ممتاااااااز👏👏👏";
+  let msg=score<=2?"😑😑 لا تعليق":score<=5?"🤨🤨 عليك الكثير من الملاحظات":score<=8?"تحدي الإملاء يتصل 📞":"ممتاااااااز👏👏👏";
   $("finalMsg").textContent=msg;
   $("details").innerHTML=results.map((r,n)=>`<div class="row"><span>${n+1}. ${r.word}</span><span class="${r.ok?'correct':'wrong'}">${r.ok?'✓ صحيح':'✗ '+r.typed}</span></div>`).join("");
 }
